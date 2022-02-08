@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1H2Y+J4/vaFBYzp4EA+TBkM+rz+3H7s9koPRHD4C2nHUgD9KwNlu0Dyj7rDog5p19cFep8jQjw1XuYYUyn8fCA==",
+  "dgSpecHash": "GkAdUaxjA3DZBhslPTRlybfbwVeNij6ez2gmAx7OVD0Cukkcn/nMCrv6ByAuGFwsl3pZhBWGSz1hydZNFa/E4A==",
   "success": true,
-  "projectFilePath": "/Users/rodrigopuls/Documents/Curso C#/ConsoleChess/ConsoleChess/ConsoleChess.csproj",
+  "projectFilePath": "C:\\Users\\Lexi\\Desktop\\School\\CSharpConsoleChess\\ConsoleChess\\ConsoleChess.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

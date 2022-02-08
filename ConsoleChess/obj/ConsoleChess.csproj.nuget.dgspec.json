@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "/Users/rodrigopuls/Documents/Curso C#/ConsoleChess/ConsoleChess/ConsoleChess.csproj": {}
+    "C:\\Users\\Lexi\\Desktop\\School\\CSharpConsoleChess\\ConsoleChess\\ConsoleChess.csproj": {}
   },
   "projects": {
-    "/Users/rodrigopuls/Documents/Curso C#/ConsoleChess/ConsoleChess/ConsoleChess.csproj": {
+    "C:\\Users\\Lexi\\Desktop\\School\\CSharpConsoleChess\\ConsoleChess\\ConsoleChess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/rodrigopuls/Documents/Curso C#/ConsoleChess/ConsoleChess/ConsoleChess.csproj",
+        "projectUniqueName": "C:\\Users\\Lexi\\Desktop\\School\\CSharpConsoleChess\\ConsoleChess\\ConsoleChess.csproj",
         "projectName": "ConsoleChess",
-        "projectPath": "/Users/rodrigopuls/Documents/Curso C#/ConsoleChess/ConsoleChess/ConsoleChess.csproj",
-        "packagesPath": "/Users/rodrigopuls/.nuget/packages/",
-        "outputPath": "/Users/rodrigopuls/Documents/Curso C#/ConsoleChess/ConsoleChess/obj/",
+        "projectPath": "C:\\Users\\Lexi\\Desktop\\School\\CSharpConsoleChess\\ConsoleChess\\ConsoleChess.csproj",
+        "packagesPath": "C:\\Users\\Lexi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Lexi\\Desktop\\School\\CSharpConsoleChess\\ConsoleChess\\obj\\",
         "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "/Users/rodrigopuls/.nuget/NuGet/NuGet.Config"
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
-        "initialalTargetFrameworks": [
+        "configFilePaths": [
+          "C:\\Users\\Lexi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -52,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/6.0.101/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

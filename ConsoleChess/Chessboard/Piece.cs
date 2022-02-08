@@ -51,30 +51,18 @@ namespace Chessboard
         {
             switch (this.ToString())
             {
-                case "K" when Color == Color.White:
-                    return "\u2654";
-                case "K" when Color == Color.Black:
-                    return "\u265a";
-                case "Q" when Color == Color.White:
-                    return "\u2655";
-                case "Q" when Color == Color.Black:
-                    return "\u265b";
-                case "R" when Color == Color.White:
-                    return "\u2656";
-                case "R" when Color == Color.Black:
-                    return "\u265c";
-                case "B" when Color == Color.White:
-                    return "\u2657";
-                case "B" when Color == Color.Black:
-                    return "\u2657";
-                case "H" when Color == Color.White:
-                    return "\u2658";
-                case "H" when Color == Color.Black:
-                    return "\u265e";
-                case "P" when Color == Color.White:
-                    return "\u2659";
-                case "P" when Color == Color.Black:
-                    return "\u265f";
+                case "K":
+                    return "K";
+                case "Q":
+                    return "Q";
+                case "R":
+                    return "R";
+                case "B":
+                    return "B";
+                case "H":
+                    return "H";
+                case "P":
+                    return "P";
                 default:
                     return "";
             }
