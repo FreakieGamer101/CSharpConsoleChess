@@ -23,6 +23,7 @@ namespace Game
 
         private bool ValidateRookCanCastle(Position position)
         {
+            //not being used
             Piece piece = Board.Piece(position);
 
             return piece != null && piece is Rook && piece.Color == Color && piece.MovementQuantity == 0;
@@ -97,27 +98,27 @@ namespace Game
                 Position expectedRookPosition1 = new Position(Position.Line, Position.Column + 3);
                 if (ValidateRookCanCastle(expectedRookPosition1))
                 {
-                    Position emptySlot1 = new Position(Position.Line, Position.Column + 1);
-                    Position emptySlot2 = new Position(Position.Line, Position.Column + 2);
+                    Piece RightSlot1 = Board.Piece(Position.Line, Position.Column + 1);
+                    Piece RightSlot2 = Board.Piece(Position.Line, Position.Column + 2);
 
-                    if (Board.Piece(emptySlot1) == null && Board.Piece(emptySlot2) == null)
+                    if (RightSlot1 == null && RightSlot2 == null)
                     {
-                        matrix[Position.Line, Position.Column + 2] = true;
+                        matrix[Position.Line, Position.Column + 3] = true;
                     }
                 }
-
 
                 // queen-side castling
                 Position expectedRookPosition2 = new Position(Position.Line, Position.Column - 4);
                 if (ValidateRookCanCastle(expectedRookPosition2))
                 {
-                    Position emptySlot1 = new Position(Position.Line, Position.Column - 1);
-                    Position emptySlot2 = new Position(Position.Line, Position.Column - 2);
-                    Position emptySlot3 = new Position(Position.Line, Position.Column - 3);
 
-                    if (Board.Piece(emptySlot1) == null && Board.Piece(emptySlot2) == null && Board.Piece(emptySlot3) == null)
+                    Piece LeftSlot1 = Board.Piece(Position.Line, Position.Column - 1);
+                    Piece LeftSlot2 = Board.Piece(Position.Line, Position.Column - 2);
+                    Piece LeftSlot3 = Board.Piece(Position.Line, Position.Column - 3);
+
+                    if (LeftSlot1 == null && LeftSlot2 == null && LeftSlot3 == null)
                     {
-                        matrix[Position.Line, Position.Column - 2] = true;
+                        matrix[Position.Line, Position.Column - 4] = true;
                     }
                 }
             }

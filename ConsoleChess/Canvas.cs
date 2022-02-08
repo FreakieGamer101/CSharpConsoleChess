@@ -66,7 +66,9 @@ namespace ConsoleChess
         public static BoardPosition ReadPieceMovimentInput()
         {
             string input = Console.ReadLine();
+            //IndexOutOfRangeException when just hitting enter on initial position, final position
             char column = input[0];
+            //FormatException when something not in [letter + number] form is inputted
             int line = int.Parse(input[1].ToString());
 
             return new BoardPosition(column, line);
