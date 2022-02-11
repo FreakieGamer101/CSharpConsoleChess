@@ -23,11 +23,9 @@ namespace Game
 
         private bool ValidateRookCanCastle(Position position)
         {
-            //not being used
             Piece piece = Board.Piece(position);
 
             return piece != null && piece is Rook && piece.Color == Color && piece.MovementQuantity == 0;
-
         }
 
         public override bool[,] GetAllPossibleMoves()

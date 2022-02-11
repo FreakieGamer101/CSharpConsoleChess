@@ -18,10 +18,13 @@ C:\Users\Lexi\Desktop\School\CSharpConsoleChess\ConsoleChess\bin\Debug\netcoreap
 C:\Users\Lexi\Desktop\School\CSharpConsoleChess\ConsoleChess\bin\Debug\netcoreapp3.1\ConsoleChess.runtimeconfig.dev.json
 C:\Users\Lexi\Desktop\School\CSharpConsoleChess\ConsoleChess\bin\Debug\netcoreapp3.1\ConsoleChess.dll
 C:\Users\Lexi\Desktop\School\CSharpConsoleChess\ConsoleChess\bin\Debug\netcoreapp3.1\ConsoleChess.pdb
-C:\Users\Lexi\Desktop\School\CSharpConsoleChess\ConsoleChess\obj\Debug\netcoreapp3.1\ConsoleChess.csprojAssemblyReference.cache
+C:\Users\Lexi\Desktop\School\CSharpConsoleChess\ConsoleChess\bin\Debug\netcoreapp3.1\WindowsInput.dll
+C:\Users\Lexi\Desktop\School\CSharpConsoleChess\ConsoleChess\bin\Debug\netcoreapp3.1\nunit.framework.dll
 C:\Users\Lexi\Desktop\School\CSharpConsoleChess\ConsoleChess\obj\Debug\netcoreapp3.1\ConsoleChess.AssemblyInfoInputs.cache
 C:\Users\Lexi\Desktop\School\CSharpConsoleChess\ConsoleChess\obj\Debug\netcoreapp3.1\ConsoleChess.AssemblyInfo.cs
 C:\Users\Lexi\Desktop\School\CSharpConsoleChess\ConsoleChess\obj\Debug\netcoreapp3.1\ConsoleChess.csproj.CoreCompileInputs.cache
+C:\Users\Lexi\Desktop\School\CSharpConsoleChess\ConsoleChess\obj\Debug\netcoreapp3.1\ConsoleChess.csproj.CopyComplete
 C:\Users\Lexi\Desktop\School\CSharpConsoleChess\ConsoleChess\obj\Debug\netcoreapp3.1\ConsoleChess.dll
 C:\Users\Lexi\Desktop\School\CSharpConsoleChess\ConsoleChess\obj\Debug\netcoreapp3.1\ConsoleChess.pdb
 C:\Users\Lexi\Desktop\School\CSharpConsoleChess\ConsoleChess\obj\Debug\netcoreapp3.1\ConsoleChess.genruntimeconfig.cache
+C:\Users\Lexi\Desktop\School\CSharpConsoleChess\ConsoleChess\obj\Debug\netcoreapp3.1\ConsoleChess.csprojAssemblyReference.cache

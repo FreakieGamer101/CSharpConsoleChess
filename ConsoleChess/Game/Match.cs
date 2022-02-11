@@ -42,28 +42,6 @@ namespace Game
             if (capturedPiece != null)
                 _capturedPieces.Add(capturedPiece);
 
-            // special move king-side castling
-            if (piece is King && final.Column == initial.Column + 2)
-            {
-                Position rookInitial = new Position(initial.Line, initial.Column + 3);
-                Position rookFinal = new Position(initial.Line, initial.Column + 1);
-
-                Piece rook = Board.RemovePiece(rookInitial);
-                rook.IncrementMovementQuantity();
-                Board.InsertPiece(rook, rookFinal);
-            }
-
-            // special move queen-side castling
-            if (piece is King && final.Column == initial.Column - 2)
-            {
-                Position rookInitial = new Position(initial.Line, initial.Column - 4);
-                Position rookFinal = new Position(initial.Line, initial.Column - 1);
-
-                Piece rook = Board.RemovePiece(rookInitial);
-                rook.IncrementMovementQuantity();
-                Board.InsertPiece(rook, rookFinal);
-            }
-
             // special move en passant
             if (piece is Pawn)
             {
@@ -111,9 +89,9 @@ namespace Game
                 Position rookInitial = new Position(initial.Line, initial.Column - 4);
                 Position rookFinal = new Position(initial.Line, initial.Column - 1);
 
-                Piece rook = Board.RemovePiece(rookFinal);
+                Piece rook = Board.RemovePiece(rookInitial);
                 rook.DecrementMovementQuantity();
-                Board.InsertPiece(rook, rookInitial);
+                Board.InsertPiece(rook, rookFinal);
             }
 
             // special move en passant
@@ -133,6 +111,7 @@ namespace Game
 
         public void PlayTurn(Position initial, Position final)
         {
+            Piece movedPiece = Board.Piece(initial);
             Piece capturedPiece = MovePiece(initial, final);
 
             if (IsKingInCheckmate(CurrentPlayer))
@@ -143,18 +122,31 @@ namespace Game
 
             Piece piece = Board.Piece(final);
 
-            // special move promotion
-            if (piece is Pawn)
+            if (piece != null)
             {
-                if ((piece.Color == Color.White && final.Line == 0) || (piece.Color == Color.Black && final.Line == 7))
+                // special move promotion
+                if (piece is Pawn)
                 {
-                    piece = Board.RemovePiece(final);
-                    _boardPieces.Remove(piece);
+                    if ((piece.Color == Color.White && final.Line == 0) || (piece.Color == Color.Black && final.Line == 7))
+                    {
+                        piece = Board.RemovePiece(final);
+                        _boardPieces.Remove(piece);
 
-                    Piece queen = new Queen(Board, piece.Color);
+                        Piece queen = new Queen(Board, piece.Color);
 
-                    Board.InsertPiece(queen, final);
-                    _boardPieces.Add(queen);
+                        Board.InsertPiece(queen, final);
+                        _boardPieces.Add(queen);
+                    }
+                }
+
+                // special move en passant
+                if (piece is Knight && (final.Line == initial.Line - 2 || final.Line == initial.Line + 2))
+                {
+                    VunerableToEnPassantMove = piece;
+                }
+                else
+                {
+                    VunerableToEnPassantMove = null;
                 }
             }
 
@@ -170,16 +162,14 @@ namespace Game
                 ChangePlayerTurn();
             }
 
-            // special move en passant
-            if (piece is Knight && (final.Line == initial.Line - 2 || final.Line == initial.Line + 2))
+            // special move castling
+            if (capturedPiece != null && movedPiece != null)
             {
-                VunerableToEnPassantMove = piece;
+                if (capturedPiece.GetType() == typeof(Rook) && movedPiece.GetType() == typeof(King))
+                {
+                    Board.InsertPiece(capturedPiece, initial);
+                }
             }
-            else
-            {
-                VunerableToEnPassantMove = null;
-            }
-
         }
 
         public void ValidateInitialPosition(Position position)
