@@ -152,7 +152,7 @@ namespace Game
 
             Checkmate = IsKingInCheckmate(Opponnent(CurrentPlayer));
 
-            if (AnyCheckmateEscape(Opponnent(CurrentPlayer)))
+            if (Checkmate && !AnyCheckmateEscape(Opponnent(CurrentPlayer)))
             {
                 GameOver = true;
             }

@@ -13,17 +13,51 @@ namespace TestProject1
             Match = new Match();
         }
 
-
         [Test]
-        public void WhiteWins()
+        [TestCase (false)]
+        [TestCase (true)]
+        public void Win(bool isBlackWinner)
         {
+            string[][] positions;
+            //Positions to move to, white going first
+            if (isBlackWinner)
+            {
+                positions = new string[][] {
+                    new string[] {"f2", "f3"}, new string[] {"e7", "e5"},
+                    new string[] {"g2", "g4"}, new string[] {"d8", "h4"}
+                };
+            }
+            else
+            {
+                positions = new string[][] {
+                    new string[] {"e2", "e4" }, new string[] { "e7", "e5" },
+                    new string[] { "f1", "c4" }, new string[] { "b8", "c6" },
+                    new string[] { "d1", "h5" }, new string[] { "g8", "f6" },
+                    new string[] { "h5", "f7" }
+                };
+            }
 
-        }
+            //go through turns
+            for (int i = 0; i < positions.Length; i++)      
+            {
+                //Get board positions to conver to positions to pass in
+                BoardPosition initial = new BoardPosition(positions[i][0][0], int.Parse(positions[i][0][1].ToString()));
+                Position init = initial.ToPosition();
+                BoardPosition final = new BoardPosition(positions[i][1][0], int.Parse(positions[i][1][1].ToString()));
+                Position fin = final.ToPosition();
 
-        [Test]
-        public void BlackWins()
-        {
-
+                Match.PlayTurn(init, fin);
+            }
+            bool result;
+            if (isBlackWinner)
+            {
+                result = Match.CurrentPlayer == Color.Black;
+            }
+            else
+            {
+                result = Match.CurrentPlayer == Color.White;
+            }
+            Assert.IsTrue(Match.GameOver && result);
         }
 
 
