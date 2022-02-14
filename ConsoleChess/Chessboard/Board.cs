@@ -8,6 +8,11 @@ namespace Chessboard
         public int Columns { get; set; }
         private Piece[,] Pieces;
 
+        public Piece[,] GetPieces()
+        {
+            return Pieces;
+        }
+
         public Board(int lines, int columns)
         {
             Lines = lines;
