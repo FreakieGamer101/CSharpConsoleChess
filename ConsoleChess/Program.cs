@@ -1,6 +1,7 @@
 ﻿using System;
 using Chessboard;
 using ConsoleChess.Chessboard;
+using ConsoleChess.Game;
 using Game;
 
 namespace ConsoleChess
@@ -80,32 +81,31 @@ namespace ConsoleChess
         {
             try
             {
-                Match match = new Match();
-
-                while (!match.GameOver)
+                Mode960 game = new Mode960();
+                game.Execute();
+                while (!game.match.GameOver)
                 {
-
                     try
                     {
                         Console.Clear();
-                        Canvas.PrintMatch(match);
+                        Canvas.PrintMatch(game.match);
 
                         Console.WriteLine();
                         Console.Write("Type initial position: ");
                         Position initial = Canvas.ReadPieceMovimentInput().ToPosition();
-                        match.ValidateInitialPosition(initial);
+                        game.match.ValidateInitialPosition(initial);
 
-                        bool[,] GetPossibleMoves = match.Board.Piece(initial).GetAllPossibleMoves();
+                        bool[,] GetPossibleMoves = game.match.Board.Piece(initial).GetAllPossibleMoves();
 
                         Console.Clear();
-                        Canvas.PrintBoard(match.Board, GetPossibleMoves);
+                        Canvas.PrintBoard(game.match.Board, GetPossibleMoves);
 
                         Console.WriteLine();
                         Console.Write("Type final position: ");
                         Position final = Canvas.ReadPieceMovimentInput().ToPosition();
-                        match.ValidateFinalPosition(initial, final);
+                        game.match.ValidateFinalPosition(initial, final);
 
-                        match.PlayTurn(initial, final);
+                        game.match.PlayTurn(initial, final);
 
                     }
                     catch (BoardException ex)
@@ -115,7 +115,7 @@ namespace ConsoleChess
                     }
                 }
                 Console.Clear();
-                Canvas.PrintBoard(match.Board);
+                Canvas.PrintBoard(game.match.Board);
             }
             catch (BoardException ex)
             {
